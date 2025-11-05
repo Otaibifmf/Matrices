@@ -1,3 +1,11 @@
+#User Matrix
+
+rows = int(input("How many rows? "))
+cols = int(input("How many columns? "))
+size = rows * cols
+
+U = [0] * size # Populates array sized by user with zeros
+
 
 #3x3 Matrix
 A = [1, 4, 5,
@@ -14,22 +22,17 @@ C = [0, 0, 0,
 
 
 # Creates a function
-def Addition(X,Y):
+def Addition(X,Y,Z):
     
-    for i in range(9): # In range of 9 when Matrix is 3X3.
-        C[i] = X[i] + Y[i]
-
-def Subtraction(X,Y):
-
-    for i in range(9):
-        C[i] = X[i] - Y[i]
+     for i in range(size): 
+          Z[i] = X[i] + Y[i]
+     print(Z)
 
 
+def Subtraction(X,Y,Z):
+
+     for i in range(size):
+          Z[i] = X[i] - Y[i]
+     print(Z)
 
 
-#Addition(A,B)
-#print(C)
-
-
-Subtraction(B,A)
-print(C)
