@@ -17,10 +17,19 @@ C = [0, 0, 0,
 def Addition(X,Y):
     
     for i in range(9): # In range of 9 when Matrix is 3X3.
-        C[i] = A[i] + B[i]
+        C[i] = X[i] + Y[i]
+
+def Subtraction(X,Y):
+
+    for i in range(9):
+        C[i] = X[i] - Y[i]
 
 
 
-Addition(A,B)
+
+#Addition(A,B)
+#print(C)
+
+
+Subtraction(B,A)
 print(C)
-
