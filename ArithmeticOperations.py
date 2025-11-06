@@ -42,4 +42,11 @@ def Subtraction(X,Y,Z):
      print("Martices must be the same size")     
 
 
-Addition(D,E,UserMatrix)
+def DotProduct(X,Y,Z):
+   for i in range(size):
+      Z[i] = X[i + 3] * Y[i + 3] #Does not work, it just multiplies them, not dot product.
+   print(Z)   
+      # Z(first row[1]) = X(First row[1] * Y(First column[1]))
+      # Z(first row[2]) = X(First row[2] * Y(First column[2]))
+
+DotProduct(A,B,UserMatrix)
