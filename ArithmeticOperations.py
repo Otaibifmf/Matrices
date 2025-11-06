@@ -4,7 +4,7 @@ rows = int(input("How many rows? "))
 cols = int(input("How many columns? "))
 size = rows * cols
 
-U = [0] * size # Populates array sized by user with zeros
+UserMatrix = [0] * size # Populates array sized by user with zeros
 
 
 #3x3 Matrix
@@ -24,7 +24,7 @@ E = [9, 2,
      3, 5]
 
 # Creates a function
-def Addition(X,Y,Z):
+def Addition(X,Y,Z): # Takes three arrays
     if(len(X) == len(Y) == len(Z)): # If size of all arrays are equal then proceed else quit
         for i in range(size): 
             Z[i] = X[i] + Y[i]
@@ -42,4 +42,4 @@ def Subtraction(X,Y,Z):
      print("Martices must be the same size")     
 
 
-Addition(D,E,U)
+Addition(D,E,UserMatrix)
