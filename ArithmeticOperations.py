@@ -71,6 +71,10 @@ def DotProduct(X,Y):
     print(Z)
 
 
+def getAugmentedMatrix():
+    system = ["5x - 6y = 1", "6x - 5y = 10"]
+    
+
 # What's next :hmmge:
 
 # 1. Get Augmented Matrix from system:
