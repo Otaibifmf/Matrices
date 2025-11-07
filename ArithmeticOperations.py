@@ -71,4 +71,3 @@ def DotProduct(X,Y):
     print(Z)
 
 
-Addition(A,B)
