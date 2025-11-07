@@ -1,58 +1,56 @@
 # 2D Array, 3x3 Matrix
 
-TwoDArray1 = [[1,2,3], # Size 3
-              [4,5,6],
-              [7,8,9]]
+A = [[7,5,3],
+     [1,0,8],
+     [4,8,2]]
 
-TwoDArray2 = [[9,8,7], # Size 3
-              [6,5,4], 
-              [3,2,1]]
+B = [[6,1,4],
+     [5,8,2],
+     [9,7,3]]
 
-TwoDArray3 = [[1,6],
-              [2,7]]
+C = [[1,6],
+     [2,7]]
 
-TwoDArray4 = [[3,8],
-              [4,9]]
+D = [[3,8],
+     [4,9]]
 
-# 3x3 Matrix
-A = [1, 4, 5, # Size 9
-     2, 5, 6,
-     7, 2, 1]
-
-B = [8, 5, 3, 
-     9, 4, 2,
-     1, 8, 0]
-
-# 2x2 Matrix
-D = [1, 4,
-     7, 9]
-
-E = [9, 2,
-     3, 5]
 
 # Creates a function
 def Addition(X,Y): # Takes two arrays
-    if(len(X) == len(Y)): # If size of both arrays are equal
-        Z = [0] * len(X) # Result array is same size of X, filled with zeros
-        for i in range(len(X)): 
-            Z[i] = X[i] + Y[i] 
-        print(Z)
-    else:
-     print("Martices must be the same size")      
+    if(len(X) != len(Y)): # If size of arrays are not equal quit
+        print("Matrices must be the same size.")
+        return
+    
+    rows = len(X) # Gets number of rows
+    cols = len(X[0]) # Gets number of columns
+
+    Z = [[0 for _ in range(cols)] for _ in range(rows)]  # Result array is same size of X, filled with zeros
+
+    for i in range(rows):
+        for j in range(cols):
+            Z[i][j] = X[i][j] + Y[i][j]
+    print(Z)            
+        
 
 
 def Subtraction(X,Y):
-    if(len(X) == len(Y)):
-        Z = [0] * len(X)
-        for i in range(len(X)): 
-            Z[i] = X[i] - Y[i]
-        print(Z)
-    else:
-     print("Martices must be the same size")     
+    if(len(X) != len(Y)): 
+        print("Matrices must be the same size.")
+        return
+    
+    rows = len(X)
+    cols = len(X[0])
+
+    Z = [[0 for _ in range(cols)] for _ in range(rows)]  
+
+    for i in range(rows):
+        for j in range(cols):
+            Z[i][j] = X[i][j] - Y[i][j]
+    print(Z)    
 
 
 def DotProduct(X,Y):
-    # Check if matrix are compatible
+    # Check if matrices are compatible
     if len(X[0]) != len(Y):
            print("The dimension aren't compatible for multiplication")
            return
@@ -73,4 +71,4 @@ def DotProduct(X,Y):
     print(Z)
 
 
-# ToDo: Make adding and subtracting use 2D Arrays.
+Addition(A,B)
