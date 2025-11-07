@@ -73,4 +73,4 @@ def DotProduct(X,Y):
     print(Z)
 
 
-#DotProduct(TwoDArray1,TwoDArray2)
+# ToDo: Make adding and subtracting use 2D Arrays.
