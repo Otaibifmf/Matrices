@@ -71,3 +71,29 @@ def DotProduct(X,Y):
     print(Z)
 
 
+# What's next :hmmge:
+
+# 1. Get Augmented Matrix from system:
+#       5x - 6y = 1
+#       6x - 5y = 10
+#       Will become: [[5, -6, 1],
+#                    [6, -5, 10]]
+
+# 2. Reduce matrix using row operators:
+#       Multiply a row by a nonzero constant: R1 = cR1
+#       Swap two rows: R1 = R1 <--> R2
+#       Add a constant multiple of one row to another row: R1 = cR1 + R2
+
+# 3. Invert Matrix
+#       If rows=cols; square matrix, then matrix A may have an inverse.
+#       Apply row operators on A to get Identity.
+#       Stick A and I next to eachother 
+#       Apply same row operators to the whole row including I to get A^-1
+
+# 4. Echolen: 
+#       Leading terms are nonzero.
+#       Leading term is on the right of the one above it.
+#       If there exists a row of zeros, there must not be a row above it.
+#       Back substitution to get answer.
+#   4.1 Reduced Echolen: Same rules apply except first; Leading terms must be 1.
+
