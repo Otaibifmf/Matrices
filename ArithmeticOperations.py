@@ -1,11 +1,11 @@
 # User Matrix
 
-rows = int(input("How many rows? "))
-cols = int(input("How many columns? "))
-size = rows * cols
-UserMatrix = [0] * size # Populates array sized by user with zeros. Size 9
+# rows = int(input("How many rows? "))
+# cols = int(input("How many columns? "))
+# size = rows * cols
+# UserMatrix = [0] * size # Populates array sized by user with zeros. Size 9
 
-TwoDUserMatrix = [[0] * cols for _ in range(rows)] # Size 3
+# TwoDUserMatrix = [[0] * cols for _ in range(rows)] # Size 3
 
 # 2D Array, 3x3 Matrix
 
@@ -58,10 +58,18 @@ def Subtraction(X,Y,Z):
      print("Martices must be the same size")     
 
 
-def DotProduct(X,Y,Z):
+def DotProduct(X,Y):
+    # Check if matrix are compatible
+    if len(X[0]) != len(Y):
+           print("The dimension aren't compatible for multiplication")
+           return
+
     rows = len(X) # Gets number of rows in matrix X
     cols = len(Y[0]) # Gets number of columns in matrix Y
     inner = len(X[0])
+
+    # Empty result matrix with size based on X&Y filled with zeros 
+    Z = [[0 for _ in range(cols)] for _ in range(rows)] 
 
     for i in range(rows):
        for j in range(cols):
@@ -72,4 +80,4 @@ def DotProduct(X,Y,Z):
     print(Z)
 
 
-DotProduct(TwoDArray3,TwoDArray4,TwoDUserMatrix)
+DotProduct(TwoDArray1,TwoDArray2)
