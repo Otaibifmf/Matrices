@@ -3,22 +3,22 @@
 rows = int(input("How many rows? "))
 cols = int(input("How many columns? "))
 size = rows * cols
-UserMatrix = [0] * size # Populates array sized by user with zeros
+UserMatrix = [0] * size # Populates array sized by user with zeros. Size 9
 
-# TwoDUserMatrix = [[0] * rows for _ in range(rows)]
+TwoDUserMatrix = [[0] * cols for _ in range(rows)] # Size 3
 
 # 2D Array, 3x3 Matrix
 
-TwoDArray1 = [[1,2,3],
+TwoDArray1 = [[1,2,3], # Size 3
               [4,5,6],
               [7,8,9]]
 
-TwoDArray2 = [[9,8,7],
+TwoDArray2 = [[9,8,7], # Size 3
               [6,5,4], 
               [3,2,1]]
 
 # 3x3 Matrix
-A = [1, 4, 5,
+A = [1, 4, 5, # Size 9
      2, 5, 6,
      7, 2, 1]
 
@@ -53,21 +53,16 @@ def Subtraction(X,Y,Z):
 
 
 def DotProduct(X,Y,Z):
-
-    # How do I loop this?
-    # Doen't work when matrices are not the same size
-
-    Z[0] = X[0][0] * Y[0][0] + X[0][1] * Y[1][0] + X[0][2] * Y[2][0] # Multiplying First Row by First Column
-    Z[1] = X[0][0] * Y[0][1] + X[0][1] * Y[1][1] + X[0][2] * Y[2][1] # Multiplying First Row by Second Column
-    Z[2] = X[0][0] * Y[0][2] + X[0][1] * Y[1][2] + X[0][2] * Y[2][2] # Multiplying First Row by Third Column
-
-    Z[3] = X[1][0] * Y[0][0] + X[1][1] * Y[1][0] + X[1][2] * Y[2][0] # Multiplying Second Row by First Column
-    Z[4] = X[1][0] * Y[0][1] + X[1][1] * Y[1][1] + X[1][2] * Y[2][1] # Multiplying Second Row by Second Column 
-    Z[5] = X[1][0] * Y[0][2] + X[1][1] * Y[1][2] + X[1][2] * Y[2][2] # Multiplying Second Row by Third Column 
-
-    Z[6] = X[2][0] * Y[0][0] + X[2][1] * Y[1][0] + X[2][2] * Y[2][0] # Multiplying Third Row by First Column
-    Z[7] = X[2][0] * Y[0][1] + X[2][1] * Y[1][1] + X[2][2] * Y[2][1] # Multiplying Third Row by Second Column
-    Z[8] = X[2][0] * Y[0][2] + X[2][1] * Y[1][2] + X[2][2] * Y[2][2] # Multiplying Third Row by Third Column
-
+    for i in range(rows):
+       for j in range(cols):
+          for k in range(cols):
+             Z[i][j] += X[i][k] * Y[k][j] # Works with 2D 3x3 Matrix
+ 
     print(Z)
+
+
+DotProduct(TwoDArray1,TwoDArray2,TwoDUserMatrix)
+
+# After getting a loop for DotProduct, make addition and subtraction use twodarrays
+
 
