@@ -17,6 +17,12 @@ TwoDArray2 = [[9,8,7], # Size 3
               [6,5,4], 
               [3,2,1]]
 
+TwoDArray3 = [[1,6],
+              [2,7]]
+
+TwoDArray4 = [[3,8],
+              [4,9]]
+
 # 3x3 Matrix
 A = [1, 4, 5, # Size 9
      2, 5, 6,
@@ -53,16 +59,17 @@ def Subtraction(X,Y,Z):
 
 
 def DotProduct(X,Y,Z):
+    rows = len(X) # Gets number of rows in matrix X
+    cols = len(Y[0]) # Gets number of columns in matrix Y
+    inner = len(X[0])
+
     for i in range(rows):
        for j in range(cols):
-          for k in range(cols):
-             Z[i][j] += X[i][k] * Y[k][j] # Works with 2D 3x3 Matrix
+          Z[i][j] = 0
+          for k in range(inner):
+             Z[i][j] += X[i][k] * Y[k][j] 
  
     print(Z)
 
 
-DotProduct(TwoDArray1,TwoDArray2,TwoDUserMatrix)
-
-# After getting a loop for DotProduct, make addition and subtraction use twodarrays
-
-
+DotProduct(TwoDArray3,TwoDArray4,TwoDUserMatrix)
