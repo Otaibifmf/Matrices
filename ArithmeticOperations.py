@@ -71,9 +71,35 @@ def DotProduct(X,Y):
     print(Z)
 
 
-def getAugmentedMatrix():
-    system = ["5x - 6y = 1", "6x - 5y = 10"]
-    
+# from user
+system = "5x -6y = 1" 
+
+
+def getAugmentedMatrix(eq):
+    print(extractNumbers(eq))
+
+
+
+
+def extractNumbers(input_string):
+    nums = []
+    current = ""
+
+    for ch in input_string:
+        if ch.isdigit() or ch == '-': # If num or negative num
+            current += ch # Add current character to variable
+        else:
+            if current not in ("", "-"):
+                nums.append(int(current)) # Enter values of current as integers
+            current = ""
+
+
+    if current not in ("", "-"):  # Adds the last number in the string
+        nums.append(int(current))
+
+    return nums                   
+
+getAugmentedMatrix(system)
 
 # What's next :hmmge:
 
