@@ -1,4 +1,4 @@
-# 2D Array, 3x3 Matrix
+# 2D Array
 
 A = [[7,5,3],
      [1,0,8],
@@ -18,6 +18,7 @@ E = [[3,2],
      [6,7],
      [4,9]]
 
+system = "5x -6y = 1" 
 
 # Creates a function
 def Addition(X,Y): # Takes two arrays
@@ -77,10 +78,6 @@ def DotProduct(X,Y):
  
     for row in Z:
         print(" ".join(f"{x:2}" for x in row))  
-
-
-# from user
-system = "5x -6y = 1" 
 
 
 def extractNumbers(input_string):
