@@ -14,6 +14,10 @@ C = [[1,6],
 D = [[3,8],
      [4,9]]
 
+E = [[3,2],
+     [6,7],
+     [4,9]]
+
 
 # Creates a function
 def Addition(X,Y): # Takes two arrays
@@ -99,7 +103,29 @@ def extractNumbers(input_string):
 
     return nums                   
 
-getAugmentedMatrix(system)
+
+def generateIdentity(input_matrix):
+
+    if(len(input_matrix[0]) != len(input_matrix)):
+        print("Matrix must be a square.")
+        return
+
+    rows = len(input_matrix)
+    cols = len(input_matrix[0])
+
+    Z = [[0 for _ in range(cols)] for _ in range(rows)] 
+
+    for i in range(rows):
+        for j in range(cols):
+
+            if (Z[i] == Z[j]):
+                Z[i][j] = 1
+
+            else:
+                Z[i][j] = 0    
+
+    print(Z)            
+
 
 # What's next :hmmge:
 
