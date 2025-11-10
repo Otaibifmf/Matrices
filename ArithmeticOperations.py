@@ -83,12 +83,6 @@ def DotProduct(X,Y):
 system = "5x -6y = 1" 
 
 
-def getAugmentedMatrix(eq):
-    print(extractNumbers(eq))
-
-
-
-
 def extractNumbers(input_string):
     nums = []
     current = ""
