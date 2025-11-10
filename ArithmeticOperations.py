@@ -18,7 +18,6 @@ E = [[3,2],
      [6,7],
      [4,9]]
 
-system = "5x -6y = 1" 
 
 # Creates a function
 def Addition(X,Y): # Takes two arrays
@@ -36,7 +35,8 @@ def Addition(X,Y): # Takes two arrays
             Z[i][j] = X[i][j] + Y[i][j]
     
     for row in Z:
-        print(" ".join(f"{x:2}" for x in row))   
+        print(" ".join(f"{x:2}" for x in row))    
+    return Z
         
 
 def Subtraction(X,Y):
@@ -54,7 +54,8 @@ def Subtraction(X,Y):
             Z[i][j] = X[i][j] - Y[i][j]
     
     for row in Z:
-        print(" ".join(f"{x:2}" for x in row))  
+        print(" ".join(f"{x:2}" for x in row))     
+    return Z
 
 
 def DotProduct(X,Y):
@@ -78,6 +79,7 @@ def DotProduct(X,Y):
  
     for row in Z:
         print(" ".join(f"{x:2}" for x in row))  
+    return Z
 
 
 def extractNumbers(input_string):
@@ -99,14 +101,14 @@ def extractNumbers(input_string):
     return nums                   
 
 
-def generateIdentity(input_matrix):
+def generateIdentity(X):
 
-    if(len(input_matrix[0]) != len(input_matrix)):
+    if(len(X[0]) != len(X)):
         print("Matrix must be a square.")
         return
 
-    rows = len(input_matrix)
-    cols = len(input_matrix[0])
+    rows = len(X)
+    cols = len(X[0])
 
     Z = [[0 for _ in range(cols)] for _ in range(rows)] 
 
@@ -120,32 +122,45 @@ def generateIdentity(input_matrix):
                 Z[i][j] = 0    
 
     for row in Z:
-        print(" ".join(f"{x:2}" for x in row))          
+        print(" ".join(f"{x:2}" for x in row))     
+    return Z     
+
+
+def getAugmentedMatrix():
+    Z = []
+    print("Enter one System per line. Type 0 when finished.")
+
+    while True:
+        system = input("System: ").strip()
+        if system == "0":
+            break
+
+        row = extractNumbers(system)
+        Z.append(row)
+
+    for row in Z:
+        print(" ".join(f"{x:2}" for x in row))     
+    return Z     
 
 
 # What's next :hmmge:
 
-# 1. Get Augmented Matrix from system:
-#       5x - 6y = 1
-#       6x - 5y = 10
-#       Will become: [[5, -6, 1],
-#                    [6, -5, 10]]
 
-# 2. Reduce matrix using row operators:
+# 1. Reduce matrix using row operators:
 #       Multiply a row by a nonzero constant: R1 = cR1
 #       Swap two rows: R1 = R1 <--> R2
 #       Add a constant multiple of one row to another row: R1 = cR1 + R2
 
-# 3. Invert Matrix
+# 2. Invert Matrix
 #       If rows=cols; square matrix, then matrix A may have an inverse.
 #       Apply row operators on A to get Identity.
 #       Stick A and I next to eachother 
 #       Apply same row operators to the whole row including I to get A^-1
 
-# 4. Echolen: 
+# 3. Echolen: 
 #       Leading terms are nonzero.
 #       Leading term is on the right of the one above it.
 #       If there exists a row of zeros, there must not be a row above it.
 #       Back substitution to get answer.
-#   4.1 Reduced Echolen: Same rules apply except first; Leading terms must be 1.
+#   3.1 Reduced Echolen: Same rules apply except first; Leading terms must be 1.
 
