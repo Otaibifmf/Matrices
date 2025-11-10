@@ -33,9 +33,10 @@ def Addition(X,Y): # Takes two arrays
     for i in range(rows):
         for j in range(cols):
             Z[i][j] = X[i][j] + Y[i][j]
-    print(Z)            
+    
+    for row in Z:
+        print(" ".join(f"{x:2}" for x in row))   
         
-
 
 def Subtraction(X,Y):
     if(len(X) != len(Y)): 
@@ -50,7 +51,9 @@ def Subtraction(X,Y):
     for i in range(rows):
         for j in range(cols):
             Z[i][j] = X[i][j] - Y[i][j]
-    print(Z)    
+    
+    for row in Z:
+        print(" ".join(f"{x:2}" for x in row))  
 
 
 def DotProduct(X,Y):
@@ -72,7 +75,8 @@ def DotProduct(X,Y):
           for k in range(inner):
              Z[i][j] += X[i][k] * Y[k][j] 
  
-    print(Z)
+    for row in Z:
+        print(" ".join(f"{x:2}" for x in row))  
 
 
 # from user
@@ -124,7 +128,8 @@ def generateIdentity(input_matrix):
             else:
                 Z[i][j] = 0    
 
-    print(Z)            
+    for row in Z:
+        print(" ".join(f"{x:2}" for x in row))          
 
 
 # What's next :hmmge:
