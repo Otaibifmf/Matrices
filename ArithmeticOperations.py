@@ -174,3 +174,4 @@ def getAugmentedMatrix():
 #       Given matrix A, it will return the cofactor matrix of A.
 #       Multiplying A[0] by Cofactor A[0] will give the determinant of A. 
 
+#test
