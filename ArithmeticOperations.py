@@ -143,7 +143,7 @@ def getAugmentedMatrix():
     return Z     
 
 
-# What's next :hmmge:
+# TODO:
 
 
 # 1. Reduce matrix using row operators:
@@ -151,16 +151,26 @@ def getAugmentedMatrix():
 #       Swap two rows: R1 = R1 <--> R2
 #       Add a constant multiple of one row to another row: R1 = cR1 + R2
 
-# 2. Invert Matrix
-#       If rows=cols; square matrix, then matrix A may have an inverse.
+# 2. Invert Matrix:
+#       If determinant of a square matrix = 0, then it has no inverse.
 #       Apply row operators on A to get Identity.
 #       Stick A and I next to eachother 
 #       Apply same row operators to the whole row including I to get A^-1
+
+#   2.1. Determinants Function:
+#           det(A) = A[0][0] * remaining elements that are not in the same axes.
+#                    - A[0][1] * remaining matrix + A[0][2] * remaining matrix
 
 # 3. Echolen: 
 #       Leading terms are nonzero.
 #       Leading term is on the right of the one above it.
 #       If there exists a row of zeros, there must not be a row above it.
 #       Back substitution to get answer.
-#   3.1 Reduced Echolen: Same rules apply except first; Leading terms must be 1.
+
+#   3.1. Reduced Echolen: 
+#           Same rules apply except first; Leading terms must be 1.
+
+# 4. Minors & Cofactors:
+#       Given matrix A, it will return the cofactor matrix of A.
+#       Multiplying A[0] by Cofactor A[0] will give the determinant of A. 
 
