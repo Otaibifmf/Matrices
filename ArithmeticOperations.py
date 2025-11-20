@@ -143,6 +143,48 @@ def getAugmentedMatrix():
     return Z     
 
 
+def getDeterminant(X):
+    rows = len(X)
+    cols = len(X[0])
+
+    if rows == cols: # We can only find the determinant of a sqaure function.
+
+        if rows and cols != 2:
+            
+            # We should choose the row/col with the most 
+            # But for now we'll always choose the first row.
+            
+            for i in range(rows): # This will give us the rows
+                for j in range(cols):
+
+
+# We should each element in the first row, switching between positive and negative
+# And then multiply it by the smaller matrix which excludes the first row and column.
+# We could probably use recursion, for example: 3x3 matrix, positive first row&col time 2x2 matrix the excludes first row and column. Then we called get determinant on it. .
+# 
+                    X[i][j]
+            
+            
+        
+
+
+
+        # When a matrix is 2x2 we can use the ad - bc rule to find it's determinant
+        # ad - bc translate to: 
+
+        else:
+            det = (X[0][0] * X[1][1]) - (X[0][1] * X[1][0])
+            return det
+    
+    else:
+        return "The matrix must be square"
+
+
+
+print(getDeterminant(A))
+
+
+
 # TODO:
 
 
