@@ -146,22 +146,19 @@ def getAugmentedMatrix():
 
 
 
-def getRemainingMatrix(X):
+def getInnerMatrix(X):
 
+    # If X is a 3x3, then Z will be 2x2.
+    rows = len(X) - 1
+    cols = len(X[0]) - 1
 
-    return 
+    Z = [[0 for _ in range(cols)] for _ in range(rows)]
 
+    for i in range(rows):
+        for j in range(cols):
+            Z[i][j] = X[i + 1][j + 1] # This always ignore the element at X[0][0] and starts with X[1][1]
 
-
-
-
-
-
-
-
-
-
-
+    return Z
 
 
 
