@@ -143,20 +143,51 @@ def getAugmentedMatrix():
     return Z     
 
 
+
+
+
+def getRemainingMatrix(X):
+
+
+    return 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def getDeterminant(X):
     rows = len(X)
     cols = len(X[0])
 
     if rows == cols: # We can only find the determinant of a sqaure function.
 
-        if rows and cols != 2:
+        if rows and cols != 2: # If it's not 2x2
             
-            # We should choose the row/col with the most 
+            # We should choose the row/col with the most zeros 
             # But for now we'll always choose the first row.
-            
+
+            # Rule ∣A∣ = a(ei−fh)−b(di−fg)+c(dh−eg),
+            # Outer loop will be the every element in the top row -> rows[0][i], 
+
+
             for i in range(rows): # This will give us the rows
                 for j in range(cols):
 
+                    # Multuiply a by (ei-fh), how do we set [e,f],[h,i] as remainingMatrix?
+                    # rows[0][0] * getDeterminant(getRemainingMatrix(0,0)) - rows[0][1] * getDeterminant(getRemainingMatrix(0,1)) + rows[0][2] * getDeterminant(getRemainingMatrix(0,2))
+                    # det += (-1**i * rows[0][i]) * getDeterminant(remainingMatrix)
 
 # We should each element in the first row, switching between positive and negative
 # And then multiply it by the smaller matrix which excludes the first row and column.
